@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.35.
+signed via the Module::Signature module, version 0.38.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -16,17 +16,17 @@ Hash: SHA1
 
 SHA1 7d6af2e07b7383b2f69ec3ea298d9503ff71dcf3 AUTHORS
 SHA1 7a95fc8778fbce1f60d222e0d0d1dbb6c649461f Artistic
+SHA1 7434cad1c32720a1313ee9db0426a94133b441ea Build.PL
 SHA1 531e6b5c470d4726483fd68833391653eace0a92 COPYING
-SHA1 fefbe47f20928d27ba0dee301cfa961565189e20 CREDITS
-SHA1 5dc6dfeb3d578e39288a9803ad08cb318ae1d006 Changes
-SHA1 c4f099a8f20f168a085a0d6da35b7775d542146f INSTALL
-SHA1 0e095a8c8f75cebc35ba29f2b79244ab9f5d4a2a LICENCE
-SHA1 c2336f37d0a4f9e641a346357d0971e09cc77bfe MANIFEST
+SHA1 40fbc8cacedd138644ef3aaf8714d9c2e9fba99b CREDITS
+SHA1 e70c600230ab2004b181460442c5c045ba7da36e Changes
+SHA1 305b279ce9942cad0b6f522bde234444730e8523 LICENCE
+SHA1 48dcfdb40cb88bb214c55173e9ce9ba1a3a74a68 MANIFEST
 SHA1 b028c8ca2ddcb791c2bc55818ec5d4962ba567a1 MANIFEST.SKIP
-SHA1 11f3f1f5e885a72ae197f3f6d30bc754d2e751bb META.yml
-SHA1 de3ce1f0b21c6b766559dd8c8677f50b81d1fc39 Makefile.PL
-SHA1 4b9a5b66478241895700a8e9c6bfc6afc5a2f501 README
-SHA1 6267c080ea2d409e4e61ccd122f1abc141860c2d lib/DateTime/Format/Mail.pm
+SHA1 fe6b7c203f787e1e551de81bca762a1edc61e102 META.yml
+SHA1 1849b2e69cd3bf568e221f73cf6e91ebae6489c0 Makefile.PL
+SHA1 5c7321830e9d2e1c0977bac107c4f89871d34f73 README
+SHA1 cb6a37e0dc8982bae9ca016a7e672ad8aae0e856 lib/DateTime/Format/Mail.pm
 SHA1 bcf1db30e7b41376e939eaf3f0032074f7a1d260 notes/rfc2822.txt
 SHA1 96220d489d970654a2743ec95e8792c853515c9f notes/rfc822.txt
 SHA1 71ab8e954ba60d0d2d30f0ceab4092d68d8810ea t/00signature.t
@@ -40,9 +40,9 @@ SHA1 b3e27eac190294409858af01354648883dfd51e5 t/sample.t
 SHA1 ebb870712a24d7eb425c63ff8a438b7f1eddabb2 t/sample_dates
 SHA1 581006dacd7967d2e8a6f87a7b5e0f0fc0020e75 t/timezones.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.3 (GNU/Linux)
+Version: GnuPG v1.2.4 (GNU/Linux)
 
-iD8DBQE/lfd5zL8gm6KQWMgRAjPjAKDDUIfXoWaUzSD84RAjlknVX5XgWACbB4GO
-Hdv9MZreB3WKjj8/ctabxE4=
-=Cn9f
+iD8DBQFAFWbi+4tbS/niBUoRAhdxAKCloRvWlLuZ23eDTZDTFyfZGC833gCffL/k
+aZfaJyCIFp979Oz8PsKVl7s=
+=ldZY
 -----END PGP SIGNATURE-----
