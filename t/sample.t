@@ -1,4 +1,4 @@
-# $Id: sample.t,v 1.3 2003/08/01 05:23:14 koschei Exp $
+# $Id: sample.t,v 1.4 2003/08/01 06:29:00 autarch Exp $
 use strict;
 use Test::More tests => 2;
 use DateTime;
@@ -21,7 +21,7 @@ my $tests = my $ok = 0;
     # Smart open since 5.008 will need to do a raw read rather
     # than interpret the data as anything other than bytes.
     do { if ( $] >= 5.008 ) {
-        open DATES, '<:raw', 'sample_dates';
+        eval "open DATES, '<:raw', 'sample_dates'";
     } else {
         open DATES, '< sample_dates';
     } } or die "Cannot open date samples: $!";
