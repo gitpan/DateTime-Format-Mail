@@ -1,6 +1,5 @@
 Artistic
 AUTHORS
-ChangeLog
 Changes
 COPYING
 CREDITS
@@ -14,6 +13,7 @@ META.yml
 README
 SIGNATURE
 t/00signature.t
+t/99pod.t
 t/basic.t
 t/fixyears.t
 t/format.t
@@ -22,4 +22,3 @@ t/parse.t
 t/sample.t
 t/sample_dates
 t/timezones.t
-t/99pod.t

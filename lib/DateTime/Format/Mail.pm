@@ -1,5 +1,5 @@
 package DateTime::Format::Mail;
-# $Id: Mail.pm,v 1.4 2003/06/03 01:15:42 koschei Exp $
+# $Id: Mail.pm,v 1.6 2003/07/16 07:30:33 koschei Exp $
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ use DateTime 0.08;
 use Params::Validate qw( validate SCALAR );
 use vars qw( $VERSION );
 
-$VERSION = '0.25';
+$VERSION = '0.26';
 
 =head1 SYNOPSIS
 
@@ -383,7 +383,7 @@ sub format_datetime
     my $self = shift;
     croak "No DateTime object specified." unless @_;
     my $dt = $_[0]->clone;
-    $dt->set( language => 'en-us' );
+    $dt->set( locale => 'en_US' );
 
     my $rv = $dt->strftime( "%a, %d %b %Y %H:%M:%S %z" );
     $rv =~ s/\+0000$/-0000/;
