@@ -1,5 +1,5 @@
 package DateTime::Format::Mail;
-# $Id: Mail.pm,v 1.13 2003/10/21 14:54:56 koschei Exp $
+# $Id: Mail.pm,v 1.15 2003/10/22 03:18:24 koschei Exp $
 
 use strict;
 use 5.005;
@@ -8,7 +8,7 @@ use DateTime 0.17;
 use Params::Validate qw( validate validate_pos SCALAR );
 use vars qw( $VERSION );
 
-$VERSION = '0.28';
+$VERSION = '0.29';
 
 my %validations = (
     year_cutoff =>  {
@@ -158,7 +158,7 @@ sub loose
 sub strict
 {
     my $self = shift;
-    croak "loose() takes no arguments!" if @_;
+    croak "strict() takes no arguments!" if @_;
     return $self->_set_parse_method( '_parse_strict' );
 }
 
@@ -193,7 +193,8 @@ sub _parse_loose
 sub parse_datetime
 {
     my $self = shift;
-    croak "No date specified." unless @_;
+    croak "No date specified for parse_datetime." unless @_;
+    croak "Too many arguments to parse_datetime." if @_ != 1;
     my $date = shift;
 
     # Wed, 12 Mar 2003 13:05:00 +1100
@@ -380,7 +381,7 @@ converting between formats is a cinch.
 
 =back
 
-As a future direction, I'm contemplating a even stricter
+As a future direction, I'm contemplating an even stricter
 parser that will only accept dates with no obsolete elements.
 
 =head1 CONSTRUCTORS
@@ -462,18 +463,26 @@ a different cutoff.
 
 The return value is the object itself.
 
+    $parser->set_year_cutoff( 60 );
+
 =head2 year_cutoff
 
 Returns the current cutoff. Can be used as either a class or object method.
+
+    my $cutoff = $parser->set_year_cutoff;
 
 =head2 default_cutoff
 
 Returns the default cutoff. A useful method to override for
 subclasses.
 
+    my $default = $parser->default_cutoff;
+
 =head2 fix_year
 
 Takes a year and returns it normalized.
+
+   my $fixed = $parser->fix_year( 3 );
 
 =head1 FORMATTING METHODS
 

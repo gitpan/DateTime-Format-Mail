@@ -2,9 +2,9 @@
 # http://module-build.sourceforge.net/META-spec.html
 distribution_type: module
 name: DateTime-Format-Mail
-date: 21 Oct 2003
+date: 22 Oct 2003
 author: SPOON
-version: 0.28
+version: 0.29
 license: perl
 
 conflicts: {}
@@ -26,7 +26,7 @@ private:
 provides:
   DateTime::Format::Mail:
     file: lib/DateTime/Format/Mail.pm
-    version: 0.28
+    version: 0.29
 
 dynamic_config: 0
 generated_by: docmaker version 1.01

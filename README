@@ -8,7 +8,10 @@ For usage, see the doco. Either use perldoc or view it
 on the web at:
     <http://search.cpan.org/dist/DateTime-Format-Mail/>
 
-Changes for 0.28 (21 Oct 2003)
+Changes for 0.29 (22 Oct 2003)
+   - Corrected an error message.
+   - Added some more error checking.
+   - Added some more method examples.
    - Default cutoff is now 49, as per RFC2822.
    - Doc shuffling and formatting tweaks.
    - set_year_cutoff and year_cutoff stricter with
