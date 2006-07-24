@@ -1,17 +1,26 @@
---- #YAML:1.0
+---
 name: DateTime-Format-Mail
-version: 0.2901
+version: 0.30
+author:
+  - |-
+    Originally written by Iain Truskett <spoon@cpan.org>, who died on
+    December 29, 2003.
+  - Maintained by Dave Rolsky <autarch@urth.org>.
+abstract: Convert between DateTime and RFC2822/822 formats
 license: perl
-distribution_type: module
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
   DateTime: 0.1705
   Params::Validate: 0.67
   Test::More: 0.47
-recommends: {}
-build_requires: {}
-conflicts: {}
+build_requires:
+  Module::Build: 0
 provides:
   DateTime::Format::Mail:
     file: lib/DateTime/Format/Mail.pm
-    version: 0.2901
-generated_by: Module::Build version 0.21
+    version: 0.30
+generated_by: Module::Build version 0.2801
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

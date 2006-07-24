@@ -1,4 +1,4 @@
-# $Id: invalid.t,v 1.3 2003/06/03 01:15:43 koschei Exp $
+# $Id: invalid.t 965 2003-06-03 01:15:43Z koschei $
 use strict;
 use Test::More tests => 24;
 

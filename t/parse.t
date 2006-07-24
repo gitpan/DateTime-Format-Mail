@@ -1,4 +1,4 @@
-# $Id: parse.t,v 1.1 2003/04/04 05:35:27 koschei Exp $
+# $Id: parse.t 955 2003-04-04 05:35:27Z koschei $
 use strict;
 use Test::More tests => 10;
 use DateTime;

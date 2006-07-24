@@ -1,5 +1,5 @@
 package DateTime::Format::Mail;
-# $Id: Mail.pm,v 1.17 2004/01/26 19:11:07 autarch Exp $
+# $Id: Mail.pm 3459 2006-07-24 12:39:08Z autarch $
 
 use strict;
 use 5.005;
@@ -8,7 +8,7 @@ use DateTime 0.1705;
 use Params::Validate qw( validate validate_pos SCALAR );
 use vars qw( $VERSION );
 
-$VERSION = '0.2901';
+$VERSION = '0.30';
 
 my %validations = (
     year_cutoff =>  {
@@ -42,9 +42,11 @@ $timezones{UTC} = $timezones{UT};
 my $strict_RE = qr{
     ^ \s* # optional 
     # [day-of-week "," ]
-    (?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) ,
+    (?:
+      (?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) ,
+      \s+
+    )?
     # date => day month year
-    \s+
     (\d{1,2})  # day => 1*2DIGIT
     \s+
     (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) # month-name

@@ -1,4 +1,4 @@
-# $Id: basic.t,v 1.4 2003/10/21 14:54:56 koschei Exp $
+# $Id: basic.t 991 2003-10-21 14:54:56Z koschei $
 use strict;
 use Test::More tests => 8;
 use vars qw( $class );
