@@ -1,5 +1,5 @@
 package DateTime::Format::Mail;
-# $Id: Mail.pm 3459 2006-07-24 12:39:08Z autarch $
+# $Id: Mail.pm 3746 2007-08-30 19:56:22Z autarch $
 
 use strict;
 use 5.005;
@@ -8,7 +8,7 @@ use DateTime 0.1705;
 use Params::Validate qw( validate validate_pos SCALAR );
 use vars qw( $VERSION );
 
-$VERSION = '0.30';
+$VERSION = '0.3001';
 
 my %validations = (
     year_cutoff =>  {
