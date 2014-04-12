@@ -1,4 +1,4 @@
-# $Id: sample.t 983 2003-08-01 06:29:00Z autarch $
+# $Id$
 use strict;
 use Test::More tests => 2;
 use DateTime;

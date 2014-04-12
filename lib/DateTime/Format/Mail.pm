@@ -1,6 +1,6 @@
 package DateTime::Format::Mail;
-# $Id: Mail.pm 3746 2007-08-30 19:56:22Z autarch $
-
+# $Id$
+$DateTime::Format::Mail::VERSION = '0.400';
 use strict;
 use 5.005;
 use Carp;
@@ -8,15 +8,13 @@ use DateTime 0.1705;
 use Params::Validate qw( validate validate_pos SCALAR );
 use vars qw( $VERSION );
 
-$VERSION = '0.3001';
-
 my %validations = (
     year_cutoff =>  {
         type => SCALAR,
         callbacks => {
             'greater than or equal to zero, less than 100' => sub {
                 defined $_[0]
-                    and $_[0] =~ /^ \d+ $/x 
+                    and $_[0] =~ /^ \d+ $/x
                     and $_[0] >= 0
                     and $_[0] < 100
             },
@@ -40,7 +38,7 @@ $timezones{UTC} = $timezones{UT};
 # XXX - need more thorough tests to ensure it's *strict*.
 
 my $strict_RE = qr{
-    ^ \s* # optional 
+    ^ \s* # optional
     # [day-of-week "," ]
     (?:
       (?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) ,
@@ -68,7 +66,7 @@ my $strict_RE = qr{
 
 # Loose parser regex
 my $loose_RE = qr{
-    ^ \s* # optional 
+    ^ \s* # optional
     (?i:
         (?:Mon|Tue|Wed|Thu|Fri|Sat|Sun|[A-Z][a-z][a-z]) ,? # Day name + comma
     )?
@@ -211,17 +209,16 @@ sub parse_datetime
         or croak "Invalid month `$when{month}'.";
 
     $when{year} = $self->fix_year( $when{year} );
-    $when{time_zone} = $self->determine_timezone( $when{time_zone} );
+    $when{time_zone} = _determine_timezone( $when{time_zone} );
+    $when{time_zone} = 'floating' if $when{time_zone} eq '-0000';
 
     my $date_time = DateTime->new( %when );
 
     return $date_time;
 }
 
-sub determine_timezone
+sub _determine_timezone
 {
-    my $self = shift;
-
     my $tz = shift;
     return '-0000' unless defined $tz; # return quickly if nothing needed
     return $tz if $tz =~ /^[+-]\d{4}$/;
@@ -291,8 +288,8 @@ sub format_datetime
     my $dt = $_[0]->clone;
     $dt->set( locale => 'en_US' );
 
-    my $rv = $dt->strftime( "%a, %d %b %Y %H:%M:%S %z" );
-    $rv =~ s/\+0000$/-0000/;
+    my $rv = $dt->strftime( "%a, %e %b %Y %H:%M:%S %z" );
+    $rv =~ s/\+0000$/-0000/ if $dt->time_zone->is_floating;
     $rv;
 }
 
@@ -455,7 +452,7 @@ See the L<synopsis|/SYNOPSIS> for examples.
 
 Two digit years are treated as valid in the loose translation and are
 translated up to a 19xx or 20xx figure. By default, following the
-specification of RFC2822, if the year is 
+specification of RFC2822, if the year is
 greater than '49', it's treated as being in the 20th century (19xx).
 If lower, or equal, then the 21st (20xx). That is, 50 becomes
 1950 while 49 is 2049.
@@ -498,14 +495,14 @@ Given a C<DateTime> object, return it as an RFC2822 compliant string.
         year => 1979, month => 7, day => 16, time_zone => 'UTC'
     );
     my $mail = DateTime::Format::Mail->format_datetime( $dt );
-    print $mail, "\n"; 
+    print $mail, "\n";
 
     # or via an object
     my $formatter = DateTime::Format::Mail->new();
     my $rfcdate = $formatter->format_datetime( $dt );
     print $rfcdate, "\n";
 
-=head1 THANKS
+=head1 THANKS FROM SPOON
 
 Dave Rolsky (DROLSKY) for kickstarting the DateTime project.
 
@@ -522,7 +519,7 @@ list. See L<http://datetime.perl.org/mailing_list.html> for more details.
 
 Alternatively, log them via the CPAN RT system via the web or email:
 
-    http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DateTime%3A%3AFormat%3A%3AMail
+    http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DateTime-Format-Mail
     bug-datetime-format-mail@rt.cpan.org
 
 This makes it much easier for me to track things and thus means
@@ -535,16 +532,18 @@ Copyright E<copy> Iain Truskett, 2003. All rights reserved.
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-The full text of the licences can be found in the F<Artistic> and
-F<COPYING> files included with this module, or in L<perlartistic> and
+The full text of the licences can be found in the F<LICENSE> file
+included with this module, or in L<perlartistic> and
 L<perlgpl> in Perl 5.8.1 or later.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
 Originally written by Iain Truskett <spoon@cpan.org>, who died on
 December 29, 2003.
 
-Maintained by Dave Rolsky <autarch@urth.org>.
+Maintained by Dave Rolsky <autarch@urth.org> from 2003 to 2013.
+
+Maintained by Philippe Bruhat (BooK) <book@cpan.org> since 2014.
 
 =head1 SEE ALSO
 

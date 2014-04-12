@@ -1,26 +1,27 @@
 ---
-name: DateTime-Format-Mail
-version: 0.3001
+abstract: 'Convert between DateTime and RFC2822/822 formats'
 author:
-  - |-
-    Originally written by Iain Truskett <spoon@cpan.org>, who died on
-    December 29, 2003.
-  - Maintained by Dave Rolsky <autarch@urth.org>.
-abstract: Convert between DateTime and RFC2822/822 formats
-license: perl
-resources:
-  license: http://dev.perl.org/licenses/
-requires:
-  DateTime: 0.1705
-  Params::Validate: 0.67
-  Test::More: 0.47
+  - 'Philippe Bruhat (BooK) <book@cpan.org>'
 build_requires:
-  Module::Build: 0
-provides:
-  DateTime::Format::Mail:
-    file: lib/DateTime/Format/Mail.pm
-    version: 0.3001
-generated_by: Module::Build version 0.2808
+  Test::More: '0.88'
+  warnings: '0'
+configure_requires:
+  ExtUtils::MakeMaker: '6.30'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.012, CPAN::Meta::Converter version 2.133380'
+license: perl
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: DateTime-Format-Mail
+requires:
+  Carp: '0'
+  DateTime: '0.18'
+  Params::Validate: '0'
+  perl: '5.006'
+  strict: '0'
+  vars: '0'
+resources:
+  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTime-Format-Mail
+  repository: http://github.com/book/DateTime-Format-Mail.git
+version: '0.400'

@@ -1,4 +1,4 @@
-# $Id: invalid.t 965 2003-06-03 01:15:43Z koschei $
+# $Id$
 use strict;
 use Test::More tests => 24;
 
