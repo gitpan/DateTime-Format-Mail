@@ -3,6 +3,7 @@ abstract: 'Convert between DateTime and RFC2822/822 formats'
 author:
   - 'Philippe Bruhat (BooK) <book@cpan.org>'
 build_requires:
+  File::Spec: '0'
   Test::More: '0.88'
   warnings: '0'
 configure_requires:
@@ -24,4 +25,4 @@ requires:
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTime-Format-Mail
   repository: http://github.com/book/DateTime-Format-Mail.git
-version: '0.400'
+version: '0.401'

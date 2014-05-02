@@ -1,6 +1,6 @@
 package DateTime::Format::Mail;
 # $Id$
-$DateTime::Format::Mail::VERSION = '0.400';
+$DateTime::Format::Mail::VERSION = '0.401';
 use strict;
 use 5.005;
 use Carp;

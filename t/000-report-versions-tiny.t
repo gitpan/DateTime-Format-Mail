@@ -51,6 +51,7 @@ sub pmver {
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('DateTime','0.18') };
 eval { $v .= pmver('ExtUtils::MakeMaker','6.30') };
+eval { $v .= pmver('File::Spec','any version') };
 eval { $v .= pmver('Params::Validate','any version') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
